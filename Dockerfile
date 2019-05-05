@@ -76,9 +76,7 @@ RUN apt-get update \
     && sed -i -e "s/pm.max_requests = 500/pm.max_requests = 200/g" ${fpm_conf} \
     && sed -i -e "s/www-data/nginx/g" ${fpm_conf} \
     && sed -i -e "s/^;clear_env = no$/clear_env = no/" ${fpm_conf} \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get install -y nginx-extras    
+    && apt-get clean && rm -rf /var/lib/apt/lists/* 
 
 RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
   && curl -o /tmp/composer-setup.sig https://composer.github.io/installer.sig \
