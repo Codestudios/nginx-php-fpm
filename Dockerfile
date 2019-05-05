@@ -39,6 +39,7 @@ RUN apt-get update \
             python-setuptools \
             git \
             nginx=${NGINX_VERSION} \
+            nginx-extras \
             php7.3-fpm \
             php7.3-cli \
             php7.3-bcmath \
