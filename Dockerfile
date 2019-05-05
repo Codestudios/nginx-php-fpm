@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-MAINTAINER Colin Wilson "colin@wyveo.com"
+MAINTAINER Codestudios S.A. "bryan.guamba@code-studios.com"
 
 # Let the container know that there is no tty
 ENV DEBIAN_FRONTEND noninteractive
