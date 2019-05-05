@@ -39,7 +39,6 @@ RUN apt-get update \
             python-setuptools \
             git \
             nginx=${NGINX_VERSION} \
-            nginx-extras \
             php7.3-fpm \
             php7.3-cli \
             php7.3-bcmath \
@@ -78,6 +77,8 @@ RUN apt-get update \
     && sed -i -e "s/www-data/nginx/g" ${fpm_conf} \
     && sed -i -e "s/^;clear_env = no$/clear_env = no/" ${fpm_conf} \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get install -y nginx-extras    
 
 RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
   && curl -o /tmp/composer-setup.sig https://composer.github.io/installer.sig \
