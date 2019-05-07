@@ -88,13 +88,3 @@ ADD ./supervisord.conf /etc/supervisord.conf
 
 # Override nginx's default config
 ADD ./default.conf /etc/nginx/conf.d/default.conf
-
-# Override default nginx welcome page
-COPY html /usr/share/nginx/html
-
-# Add Scripts
-ADD ./start.sh /start.sh
-
-EXPOSE 80
-
-CMD ["/start.sh"]
